@@ -1,0 +1,458 @@
+/* Styles for Recommendations, Knowledge Base and Learning & Feedback.
+   Reuses the app's shared classes (page-heading, eyebrow, panel, panel-header, panel-kicker,
+   primary-button, ghost-button, batch-selector, module-status). */
+
+.dm-page {
+  text-align: left;
+}
+
+.dm-page code {
+  display: inline;
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.07);
+  color: inherit;
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 0.92em;
+  line-height: inherit;
+}
+
+/* ---------- status + banners ---------- */
+
+.module-status.dm-offline {
+  color: #f0b4b4;
+}
+
+.module-status.dm-offline .status-dot {
+  background: #dc6262;
+  box-shadow: 0 0 10px rgba(220, 98, 98, 0.6);
+}
+
+.dm-banner {
+  margin-bottom: 16px;
+  padding: 12px 14px;
+  border: 1px solid rgba(220, 98, 98, 0.3);
+  border-radius: 9px;
+  background: rgba(220, 98, 98, 0.09);
+  color: #f0c4c4;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.dm-error {
+  margin: 0 0 14px;
+  color: #f28b8b;
+  font-size: 12px;
+}
+
+.dm-muted {
+  margin: 0;
+  color: #687c74;
+  font-size: 12px;
+}
+
+.dm-empty {
+  color: #7d918a;
+  font-size: 12.5px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+/* ---------- form controls ---------- */
+
+.dm-ask {
+  margin-bottom: 14px;
+}
+
+.dm-query-row {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.dm-input {
+  min-width: 0;
+  padding: 11px 13px;
+  border: 1px solid rgba(100, 160, 135, 0.18);
+  border-radius: 9px;
+  background: rgba(8, 23, 17, 0.6);
+  color: #d7e4df;
+  font-family: inherit;
+  font-size: 13px;
+}
+
+.dm-query-row .dm-input {
+  flex: 1 1 260px;
+}
+
+.dm-input::placeholder {
+  color: #4f645b;
+}
+
+.dm-input:focus-visible {
+  outline: 2px solid #4de3a4;
+  outline-offset: 1px;
+}
+
+.dm-textarea {
+  width: 100%;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.dm-filter {
+  width: 220px;
+  padding: 8px 11px;
+  font-size: 12px;
+}
+
+.dm-label {
+  display: block;
+  margin: 18px 0 6px;
+  color: #b9c9c3;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.dm-hint {
+  margin: 6px 0 14px;
+  color: #687c74;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.primary-button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.dm-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.dm-chip {
+  padding: 6px 11px;
+  border: 1px solid rgba(150, 190, 175, 0.12);
+  border-radius: 999px;
+  background: #0c1813;
+  color: #89a097;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.dm-chip:hover {
+  border-color: rgba(69, 221, 158, 0.35);
+  color: #b9d6ca;
+}
+
+/* ---------- layout ---------- */
+
+.dm-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+}
+
+.dm-side {
+  display: grid;
+  gap: 14px;
+}
+
+.dm-metrics {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.dm-metrics-two {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.dm-metric strong {
+  display: block;
+  color: #edf5f1;
+  font-size: 26px;
+  letter-spacing: -1px;
+}
+
+/* ---------- evidence ---------- */
+
+.dm-evidence {
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 8px;
+  color: #a9bbb4;
+  font-size: 12px;
+}
+
+.dm-evidence strong {
+  margin-right: 5px;
+  color: #4bd89c;
+  font-size: 15px;
+}
+
+.dm-evidence-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 9px;
+  padding: 9px 0;
+  border-top: 1px solid rgba(150, 190, 175, 0.07);
+  color: #93a8a0;
+  font-size: 11.5px;
+}
+
+.dm-evidence-row strong {
+  color: #d7e4df;
+}
+
+.dm-evidence-row small {
+  flex-basis: 100%;
+  color: #5b7068;
+  font-size: 10px;
+}
+
+/* ---------- outcome badges ---------- */
+
+.dm-badge {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.dm-badge.worked {
+  border-color: rgba(88, 198, 154, 0.35);
+  background: rgba(88, 198, 154, 0.1);
+  color: #6fdcb0;
+}
+
+.dm-badge.partial {
+  border-color: rgba(220, 182, 91, 0.35);
+  background: rgba(220, 182, 91, 0.1);
+  color: #e6c877;
+}
+
+.dm-badge.failed {
+  border-color: rgba(220, 98, 98, 0.35);
+  background: rgba(220, 98, 98, 0.1);
+  color: #ee8f8f;
+}
+
+.dm-badge.pending {
+  border-color: rgba(150, 190, 175, 0.15);
+  color: #7d918a;
+}
+
+/* ---------- knowledge base list ---------- */
+
+.dm-item {
+  border-top: 1px solid rgba(150, 190, 175, 0.08);
+}
+
+.dm-item summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 2px;
+  cursor: pointer;
+  list-style: none;
+  color: #cddad5;
+  font-size: 13px;
+}
+
+.dm-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.dm-item summary:focus-visible,
+.dm-read summary:focus-visible {
+  outline: 2px solid #4de3a4;
+  outline-offset: 2px;
+}
+
+.dm-item-id {
+  color: #4e7465;
+  font-weight: 800;
+  font-size: 12px;
+}
+
+.dm-item-title {
+  flex: 1;
+  min-width: 0;
+}
+
+.dm-item summary small {
+  color: #5b7068;
+  font-size: 10.5px;
+}
+
+.dm-item-body {
+  padding: 4px 4px 20px 30px;
+}
+
+.dm-note {
+  margin: 0 0 12px;
+  padding: 10px 12px;
+  border-left: 2px solid #4bd89c;
+  background: rgba(50, 193, 132, 0.06);
+  color: #b9c9c3;
+  font-size: 12.5px;
+  line-height: 1.6;
+}
+
+/* ---------- learning cards ---------- */
+
+.dm-review {
+  margin-bottom: 14px;
+}
+
+.dm-read {
+  margin-bottom: 4px;
+}
+
+.dm-read summary {
+  cursor: pointer;
+  color: #5ee2a8;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.dm-read .dm-md {
+  margin-top: 12px;
+  padding: 14px 16px;
+  border-radius: 9px;
+  background: rgba(8, 23, 17, 0.6);
+}
+
+.dm-outcomes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.dm-outcome-button {
+  padding: 9px 15px;
+  border: 1px solid rgba(150, 190, 175, 0.16);
+  border-radius: 9px;
+  background: #0c1813;
+  color: #9db2aa;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.dm-outcome-button:hover {
+  border-color: rgba(69, 221, 158, 0.35);
+}
+
+.dm-outcome-button[aria-pressed="true"] {
+  border-color: #4bd89c;
+  background: rgba(50, 193, 132, 0.14);
+  color: #7ff0bd;
+}
+
+/* ---------- rendered model answer ---------- */
+
+.dm-md {
+  color: #c4d3cd;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.dm-md p {
+  margin: 0 0 10px;
+}
+
+.dm-md-h {
+  margin: 20px 0 8px;
+  color: #edf5f1;
+  font-weight: 700;
+}
+
+.dm-md > .dm-md-h:first-child {
+  margin-top: 0;
+}
+
+.dm-md-h1 {
+  font-size: 17px;
+}
+
+.dm-md-h2 {
+  font-size: 15px;
+}
+
+.dm-md-h3 {
+  font-size: 13.5px;
+  color: #d7e4df;
+}
+
+.dm-md-li {
+  display: flex;
+  gap: 9px;
+  margin: 0 0 6px;
+}
+
+.dm-md-li > span {
+  flex-shrink: 0;
+  color: #4bd89c;
+}
+
+.dm-md-num {
+  min-width: 18px;
+  font-weight: 700;
+}
+
+.dm-md hr {
+  margin: 18px 0;
+  border: 0;
+  border-top: 1px solid rgba(150, 190, 175, 0.1);
+}
+
+.dm-md strong {
+  color: #e9f0ee;
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 1100px) {
+  .dm-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dm-metrics {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .dm-metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dm-filter {
+    width: 100%;
+  }
+
+  .dm-item summary {
+    flex-wrap: wrap;
+  }
+
+  .dm-item-body {
+    padding-left: 4px;
+  }
+}
